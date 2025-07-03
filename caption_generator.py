@@ -9,7 +9,7 @@ import re
 processor = BlipProcessor.from_pretrained("Salesforce/blip-image-captioning-base")
 model = BlipForConditionalGeneration.from_pretrained("Salesforce/blip-image-captioning-base")
 
-# Load dataset
+
 ds = load_dataset("kkcosmos/instagram-images-with-captions", split="train")
 
 import re
