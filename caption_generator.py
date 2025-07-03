@@ -5,7 +5,7 @@ from transformers import BlipProcessor, BlipForConditionalGeneration
 from PIL import Image
 import re
 
-# Load model and processor once
+
 processor = BlipProcessor.from_pretrained("Salesforce/blip-image-captioning-base")
 model = BlipForConditionalGeneration.from_pretrained("Salesforce/blip-image-captioning-base")
 
@@ -18,7 +18,7 @@ def get_trending_hashtags(context):
     keywords = re.findall(r'\w+', context.lower())
     matching_hashtags = []
 
-    # Sample a random subset of 10,000 entries for performance
+    
     subset = ds.shuffle(seed=random.randint(0, 9999)).select(range(10000))
 
     for item in subset:
